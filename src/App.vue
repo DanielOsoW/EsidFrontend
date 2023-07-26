@@ -74,6 +74,7 @@
       <v-navigation-drawer
         v-model="drawer"
         temporary
+        width="290"
       >
         <v-list-item
           prepend-avatar="https://randomuser.me/api/portraits/men/78.jpg"
@@ -82,11 +83,15 @@
 
         <v-divider></v-divider>
 
-        <v-list density="compact" nav>
+        <v-list density="" nav>
+          <v-list-item prepend-icon="mdi-account-key" title="Administrar Usuarios" value="adminusuarios"></v-list-item>
           <v-list-item prepend-icon="mdi-monitor" title="Proyectores" value="proyectores" @click="proyectores()"></v-list-item>
-          <v-list-item prepend-icon="mdi-account-card-outline" title="Solicitudes" value="solicitudes" @click="solicitudes()"></v-list-item>
-          <v-list-item prepend-icon="mdi-forum" title="Notificaciones" value="notificaciones"></v-list-item>
-          <v-list-item prepend-icon="mdi-help-circle-outline" title="Ayuda" value="ayuda"></v-list-item>
+          <v-list-item prepend-icon="mdi-monitor-lock" title="Administrar Proyectores" value="adminproyectores"></v-list-item>
+          <v-list-item prepend-icon="mdi-account-card-outline" title="Enviar Solicitudes" value="solicitudes" @click="solicitudes()"></v-list-item>
+          <v-list-item prepend-icon="mdi-pencil-box-multiple-outline" title="Administrar Solicitudes" value="adminsolicitudes"></v-list-item>
+          <v-list-item prepend-icon="mdi-file-document-check-outline" title="Estado Solicitudes" value="tramites" @click="tramites()"></v-list-item>
+          <v-list-item prepend-icon="mdi-forum" title="Mis Notificaciones" value="notificaciones" @click="notificaciones()"></v-list-item>
+          <v-list-item prepend-icon="mdi-help-circle-outline" title="Ayuda" value="ayuda" @click="ayuda()"></v-list-item>
         </v-list>
       </v-navigation-drawer>
       
@@ -151,14 +156,14 @@ export default {
     solicitudes() {
         this.$router.push('/solicitudes');
       },
-    agregarenunciados() {
-        this.$router.push('/nuevoenunciado');
+    tramites() {
+        this.$router.push('/tramitessolicitudes');
       },
-    asignarroles() {
-        this.$router.push('/asignarrol');
+    notificaciones() {
+        this.$router.push('/notificaciones');
       },
-    datos() {
-        this.$router.push('/data');
+    ayuda() {
+        this.$router.push('/ayuda');
       },
     progress() {
         this.$router.push('/progress');
