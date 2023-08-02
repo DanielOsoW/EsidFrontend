@@ -6,7 +6,7 @@
               justify="space-around"
               class="mb-5 mt-5">
               <div class="about">
-                <h1>Sistema ESID</h1>
+                <h1 class="font-italic font-weight-bold">Sistema ESID</h1>
               </div>
             </v-row>
             <div class="home ma-10" color="orange-darken-3">

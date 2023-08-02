@@ -71,6 +71,22 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "ayuda" */ '../views/AyudaView.vue')
   },
+  {
+    path: '/adminusuarios',
+    name: 'adminusuarios',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "adminusuarios" */ '../views/AdminUsuariosView.vue')
+  },
+  {
+    path: '/adminsolicitudes',
+    name: 'adminsolicitudes',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "adminusuarios" */ '../views/AdminSolicitudesView.vue')
+  },
 ]
 
 const router = createRouter({

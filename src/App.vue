@@ -18,7 +18,7 @@
         />
         
 
-      <v-toolbar-title class="d-flex show">Edificio Salas de Innovación Docente</v-toolbar-title>
+      <v-toolbar-title class="d-flex show font-italic font-weight-bold">Edificio Salas de Innovación Docente</v-toolbar-title>
 
       <v-spacer></v-spacer>
       <v-spacer></v-spacer>
@@ -34,40 +34,7 @@
               </v-icon>Registrarme
             </v-btn>
 
-        <!--v-dialog
-          transition="dialog-top-transition"
-          width="auto"
-        >
-          <template v-slot:activator="{ props }">
-            <v-btn variant="outlined" class="primary" color="orange-darken-2" v-bind="props">
-              <v-icon icon="mdi-account-plus" class="mr-2"> 
-              </v-icon>Registrarme
-            </v-btn>
-          </template>
-          <template v-slot:default="{ isActive }">
-            <v-card>
-              <v-toolbar
-                color="orange-darken-2"
-                title="Opening from the top"
-              ></v-toolbar>
-              <v-card-text>
-                <div class="text-h2 pa-12">Hello world!</div>
-              </v-card-text>
-              <v-card-actions class="justify-end">
-                <v-btn
-                  variant="text"
-                  @click="isActive.value = false"
-                >Close</v-btn>
-              </v-card-actions>
-            </v-card>
-          </template>
-        </v-dialog-->
     </v-toolbar>
-    <!--nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-    <v-btn>HOLA</v-btn>
-  </nav-->
   <router-view/>
   </v-app>
   <v-layout>
@@ -84,11 +51,12 @@
         <v-divider></v-divider>
 
         <v-list density="" nav>
-          <v-list-item prepend-icon="mdi-account-key" title="Administrar Usuarios" value="adminusuarios"></v-list-item>
+          <v-list-item prepend-icon="mdi-home" title="Home" value="home" @click="home()"></v-list-item>
+          <v-list-item prepend-icon="mdi-account-key" title="Administrar Usuarios" value="adminusuarios" @click="adminusuarios()"></v-list-item>
           <v-list-item prepend-icon="mdi-monitor" title="Proyectores" value="proyectores" @click="proyectores()"></v-list-item>
-          <v-list-item prepend-icon="mdi-monitor-lock" title="Administrar Proyectores" value="adminproyectores"></v-list-item>
+          <v-list-item prepend-icon="mdi-monitor-lock" title="Administrar Proyectores" value="adminproyectores "></v-list-item>
           <v-list-item prepend-icon="mdi-account-card-outline" title="Enviar Solicitudes" value="solicitudes" @click="solicitudes()"></v-list-item>
-          <v-list-item prepend-icon="mdi-pencil-box-multiple-outline" title="Administrar Solicitudes" value="adminsolicitudes"></v-list-item>
+          <v-list-item prepend-icon="mdi-pencil-box-multiple-outline" title="Administrar Solicitudes" value="adminsolicitudes" @click="adminsolicitudes()"></v-list-item>
           <v-list-item prepend-icon="mdi-file-document-check-outline" title="Estado Solicitudes" value="tramites" @click="tramites()"></v-list-item>
           <v-list-item prepend-icon="mdi-forum" title="Mis Notificaciones" value="notificaciones" @click="notificaciones()"></v-list-item>
           <v-list-item prepend-icon="mdi-help-circle-outline" title="Ayuda" value="ayuda" @click="ayuda()"></v-list-item>
@@ -165,8 +133,11 @@ export default {
     ayuda() {
         this.$router.push('/ayuda');
       },
-    progress() {
-        this.$router.push('/progress');
+    adminusuarios() {
+        this.$router.push('/adminusuarios');
+      },
+      adminsolicitudes() {
+        this.$router.push('/adminsolicitudes');
       },
     cerrar() {
         this.$store.dispatch('user',null);
